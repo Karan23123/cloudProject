@@ -1,8 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ post[1] }}</h1> <!-- Title -->
-<p>{{ post[2] }}</p>  <!-- Content -->
+<div class="container mt-4">
+    <!-- Post Title -->
+    <h1 class="mb-3">{{ post[1] }}</h1>
 
-<a href="{{ url_for('home') }}">Back to Home</a>
+    <!-- Post Content -->
+    <div class="mb-4">
+        <p>{{ post[2] }}</p>
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+</div>
 {% endblock %}
