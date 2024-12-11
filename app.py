@@ -27,7 +27,14 @@ def post(post_id):
     c.execute("SELECT * FROM posts WHERE id=?", (post_id,))
     post = c.fetchone()
     conn.close()
+
+    print(post)  # Debug: Print the fetched post data
+
+    if not post:
+        return "Post not found", 404
+
     return render_template('post.html', post=post)
+
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
